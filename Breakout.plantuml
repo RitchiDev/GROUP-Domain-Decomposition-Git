@@ -65,12 +65,14 @@ Brick <|-- Silver
 class "Silver" as Silver
 {
     moveDirection = Vector2
+    private void Move();
 }
 
 Brick <|-- Gold
 class "Gold" as Gold
 {
     bombSpawnTime = float
+    private void DropBomb();
 }
 
 class MultiplayerHandler
