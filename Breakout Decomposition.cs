@@ -45,7 +45,7 @@ When breaking a brick there is a x amount of chanche a powerup will spawn. When 
 Some powerups are stackable (with a max size).
 
 Powerups:
-    Laser: Enables a laser fromt he paddle that destroys bricks.
+    Laser: Increases the projectile count.
     Enlarge: Increases the size of the paddle.
     Catch: Allows the paddle to catch and hold the ball temporarily.
     Slow: Reduces the speed of the balls.

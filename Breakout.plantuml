@@ -18,6 +18,10 @@ class "Player" as Player
 Powerups <|-- Enlarge
 Powerups <|-- Slow
 Powerups <|-- Disruption
+Powerups <|-- Laser
+Powerups <|-- Catch
+Powerups <|-- Break
+Powerups <|-- Player
 class "PowerUps" as Powerups
 {
     postition : Vector2
@@ -42,6 +46,27 @@ class "Slow" as Slow
 class "Disruption" as Disruption
 {
     ballMultiplier : int
+}
+
+class "Laser" as Laser
+{
+    laserMultiplier : int
+}
+
+class "Catch" as Catch
+{
+    releaseTimer : float
+    public void ReleaseBall()
+}
+
+class "Break" as Break
+{
+    damageMultiplier : int
+}
+
+class "Player" as Player
+{
+    void IncreasePlayerHealth();
 }
 
 class "Brick" as Brick
