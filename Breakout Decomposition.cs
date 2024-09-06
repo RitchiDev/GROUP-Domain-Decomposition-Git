@@ -30,7 +30,6 @@ Powerups:
     Player: Gives the player an extra life.
 
 UML Draft:
-
 class PowerUp:
     Vector2 position;
     float duration;
@@ -41,11 +40,11 @@ Methods:
     public virtual void Activate();
     protected virtual void Deactivate();
 
-class Enlarge : Powerups:
+class Enlarge : PowerUp
     float enlargementFactor;
 
-class Slow : Powerups:
+class Slow : PowerUp
     float speedReduction;
 
-class Disruption : Powerups:
+class Disruption : PowerUp
     int ballMultiplier;

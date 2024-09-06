@@ -1,0 +1,13 @@
+@startuml Breakout
+skinparam style strictuml
+skinparam SequenceMessageAlignment center
+
+A -> B : HELLO WORLD
+A <- B : Hi
+
+class "Player" as Player{
+    name : string
+    value : int
+    floating : float
+}
+@enduml
