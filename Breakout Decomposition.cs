@@ -2,10 +2,11 @@
 DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT 
 
 Breakout Decomposition 
-Andrich & Wesley
+Andrich, Daniël & Wesley
 
 Andrich: Bricks
 Wesley: Powerups
+Daniël: Multiplayer
 
 Bricks:
 Bricks/Obstacles have different variants: Brick, Silver, Gold.
