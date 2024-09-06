@@ -1,6 +1,9 @@
 @startuml Breakout
 skinparam style strictuml
 skinparam SequenceMessageAlignment center
+skinparam DefaultFontName Arial
+skinparam DefaultFontSize 16
+skinparam DefaultFontStyle bold
 
 A -> B : HELLO WORLD
 A <- B : Hi
@@ -10,4 +13,29 @@ class "Player" as Player{
     value : int
     floating : float
 }
+
+Powerups <|-- Enlarge
+Powerups <|-- Slow
+class "PowerUps" as Powerups{
+    postition : Vector2
+    duration : float
+    stackable : bool
+    
+    protected virtual void Update();
+    public virtual void Activate();
+    protected virtual void Deactivate();
+}
+
+class "Enlarge" as Enlarge{
+    enlargementFactor : float
+}
+
+class "Slow" as Slow {
+    speedReduction : float
+}
+
+class "Disruption" as Disruption{
+    ballMultiplier : int
+}
+
 @enduml
