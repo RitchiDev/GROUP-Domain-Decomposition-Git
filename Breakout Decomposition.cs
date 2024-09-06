@@ -74,9 +74,6 @@ class Slow : PowerUp
 class Disruption : Powerups:
     int ballMultiplier;
 
-class Disruption : PowerUp
-    int ballMultiplier;
-
 Local Multiplayer:
 In multiplayer for breakout each player controls an instance of a paddle.
 The maximum amount of players is 3.

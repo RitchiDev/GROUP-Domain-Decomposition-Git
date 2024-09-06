@@ -16,6 +16,7 @@ class "Player" as Player{
 
 Powerups <|-- Enlarge
 Powerups <|-- Slow
+Powerups <|-- Disruption
 class "PowerUps" as Powerups{
     postition : Vector2
     duration : float
