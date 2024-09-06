@@ -2,11 +2,11 @@
 DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT 
 
 Breakout Decomposition 
-Andrich, Daniël & Wesley
+Andrich, DaniÃ«l & Wesley
 
 Andrich: Bricks
 Wesley: Powerups
-Daniël: Multiplayer
+DaniÃ«l: Multiplayer
 
 Bricks:
 Bricks have different variants: Clay, Silver, Gold.
@@ -71,5 +71,28 @@ class Enlarge : PowerUp
 class Slow : PowerUp
     float speedReduction;
 
+class Disruption : Powerups:
+    int ballMultiplier;
+
 class Disruption : PowerUp
     int ballMultiplier;
+
+Local Multiplayer:
+In multiplayer for breakout each player controls an instance of a paddle.
+The maximum amount of players is 3.
+Players can't move through eachother but are not confined to a screen space
+When another input device is detected a new player object is added to a Multiplayer class and instanced .
+When a device disconnects the respective player are removed from the class and removed ffrom the scene
+When a paddle touches a powerup the corresponding player is given the powerup.
+
+UML Draft:
+
+Class MultiplayerHandler:
+    Dictionary<Device, Player> players;
+    int maxPlayerCount = 3;
+    
+Methods:
+    private void AddPlayer();
+    private void RemovePlayer();
+    public void OnNewDevice(Device someDevice);
+    public void OnDeviceDisconnect(Device someDevice);
