@@ -8,7 +8,8 @@ skinparam DefaultFontStyle bold
 A -> B : HELLO WORLD
 A <- B : Hi
 
-class "Player" as Player{
+class "Player" as Player
+{
     name : string
     value : int
     floating : float
@@ -17,7 +18,8 @@ class "Player" as Player{
 Powerups <|-- Enlarge
 Powerups <|-- Slow
 Powerups <|-- Disruption
-class "PowerUps" as Powerups{
+class "PowerUps" as Powerups
+{
     postition : Vector2
     duration : float
     stackable : bool
@@ -27,16 +29,44 @@ class "PowerUps" as Powerups{
     protected virtual void Deactivate();
 }
 
-class "Enlarge" as Enlarge{
+class "Enlarge" as Enlarge
+{
     enlargementFactor : float
 }
 
-class "Slow" as Slow {
+class "Slow" as Slow
+{
     speedReduction : float
 }
 
-class "Disruption" as Disruption{
+class "Disruption" as Disruption
+{
     ballMultiplier : int
+}
+
+class "Brick" as Brick
+{
+    durability : int
+    position : Vector2
+    points : int
+}
+
+Brick <|-- Clay
+class "Clay" as Clay
+{
+    color : Color
+}
+
+Brick <|-- Silver
+class "Silver" as Silver
+{
+    moveDirection = Vector2
+}
+
+Brick <|-- Gold
+class "Gold" as Gold
+{
+    bombSpawnTime = float
 }
 
 @enduml
