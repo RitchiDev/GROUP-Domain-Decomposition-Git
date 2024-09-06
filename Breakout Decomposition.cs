@@ -18,7 +18,7 @@ Clay bricks: Static, starts with a random color.
 Silver bricks: Moves horizontally.
 Gold bricks: Static, drops horizontally moving bombs in intervals.
 
-UML Draft:
+UML Bricks Draft: 
 
 class Brick:
     int durability; 
@@ -53,7 +53,7 @@ Powerups:
     Disruption: Splits the ball into multiple balls.
     Player: Gives the player an extra life.
 
-UML Draft:
+UML PowerUp Draft:
 
 class PowerUp:
     Vector2 position;
