@@ -9,11 +9,35 @@ Wesley: Powerups
 Daniël: Multiplayer
 
 Bricks:
-Bricks/Obstacles have different variants: Brick, Silver, Gold.
+Bricks have different variants: Clay, Silver, Gold.
 Bricks can be damaged/broken by being hit by the ball.
-Bricks break after 1 hit. Silver bricks break after 3 hits. Gold bricks break after 5 hits.
+Clay bricks break after 1 hit. Silver bricks break after 3 hits. Gold bricks break after 5 hits.
 The more hits it takes to break a brick the more points you gain after breaking one.
-These bricks sometimes drop a powerup after being broken.
+These bricks sometimes drop a powerup after being broken.]
+Clay bricks: Static, starts with a random color.
+Silver bricks: Moves horizontally.
+Gold bricks: Static, drops horizontally moving bombs in intervals.
+
+UML Draft:
+
+class Brick:
+    int durability; 
+    Vector2 position;
+    int points;
+
+class Clay: Brick
+    Color color;
+
+class Silver: Brick
+    Vector2 moveDirection;
+
+class Gold: Brick
+    float spawnTime;
+
+Methods:
+    public virtual void Initialize();
+    public virtual void Deactivate();
+    public virtual void DropPowerUp();
 
 Powerups:
 In Breakout there are multiple powerups: Laser, Enlarge, Catch, Slow, Break, Disruption & Player (From Arkanoid Game)
