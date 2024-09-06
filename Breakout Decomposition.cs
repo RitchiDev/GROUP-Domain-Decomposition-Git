@@ -2,18 +2,42 @@
 DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT DRAFT 
 
 Breakout Decomposition 
-Andrich, Dani�l & Wesley
+Andrich, Daniël & Wesley
 
 Andrich: Bricks
 Wesley: Powerups
-Dani�l: Multiplayer
+Daniël: Multiplayer
 
 Bricks:
-Bricks/Obstacles have different variants: Brick, Silver, Gold.
+Bricks have different variants: Clay, Silver, Gold.
 Bricks can be damaged/broken by being hit by the ball.
-Bricks break after 1 hit. Silver bricks break after 3 hits. Gold bricks break after 5 hits.
+Clay bricks break after 1 hit. Silver bricks break after 3 hits. Gold bricks break after 5 hits.
 The more hits it takes to break a brick the more points you gain after breaking one.
-These bricks sometimes drop a powerup after being broken.
+These bricks sometimes drop a powerup after being broken.]
+Clay bricks: Static, starts with a random color.
+Silver bricks: Moves horizontally.
+Gold bricks: Static, drops horizontally moving bombs in intervals.
+
+UML Bricks Draft: 
+
+class Brick:
+    int durability; 
+    Vector2 position;
+    int points;
+
+class Clay: Brick
+    Color color;
+
+class Silver: Brick
+    Vector2 moveDirection;
+
+class Gold: Brick
+    float spawnTime;
+
+Methods:
+    public virtual void Initialize();
+    public virtual void Deactivate();
+    public virtual void DropPowerUp();
 
 Powerups:
 In Breakout there are multiple powerups: Laser, Enlarge, Catch, Slow, Break, Disruption & Player (From Arkanoid Game)
@@ -29,7 +53,7 @@ Powerups:
     Disruption: Splits the ball into multiple balls.
     Player: Gives the player an extra life.
 
-UML Draft:
+UML PowerUp Draft:
 
 class PowerUp:
     Vector2 position;
@@ -41,13 +65,16 @@ Methods:
     public virtual void Activate();
     protected virtual void Deactivate();
 
-class Enlarge : Powerups:
+class Enlarge : PowerUp
     float enlargementFactor;
 
-class Slow : Powerups:
+class Slow : PowerUp
     float speedReduction;
 
 class Disruption : Powerups:
+    int ballMultiplier;
+
+class Disruption : PowerUp
     int ballMultiplier;
 
 Local Multiplayer:
