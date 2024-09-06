@@ -69,4 +69,14 @@ class "Gold" as Gold
     bombSpawnTime = float
 }
 
+class MultiplayerHandler
+{
+    players : Dictionary<Device, Player> 
+    maxPlayerCount : int
+
+    private void AddPlayer();
+    private void RemovePlayer();
+    public void OnNewDevice(Device someDevice);
+    public void OnDeviceDisconnect(Device someDevice);
+}
 @enduml
