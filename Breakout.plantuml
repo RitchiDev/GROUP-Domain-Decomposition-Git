@@ -90,12 +90,24 @@ Brick <|-- Silver
 class "Silver" as Silver
 {
     moveDirection = Vector2
+    private void Move();
 }
 
 Brick <|-- Gold
 class "Gold" as Gold
 {
     bombSpawnTime = float
+    private void DropBomb();
 }
 
+class MultiplayerHandler
+{
+    players : Dictionary<Device, Player> 
+    maxPlayerCount : int
+
+    private void AddPlayer();
+    private void RemovePlayer();
+    public void OnNewDevice(Device someDevice);
+    public void OnDeviceDisconnect(Device someDevice);
+}
 @enduml
