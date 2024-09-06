@@ -49,6 +49,10 @@ class "Brick" as Brick
     durability : int
     position : Vector2
     points : int
+
+    public virtual void Initialize();
+    public virtual void Deactivate();
+    private void DropPowerUp();
 }
 
 Brick <|-- Clay
