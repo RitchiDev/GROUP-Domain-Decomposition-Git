@@ -5,14 +5,28 @@ skinparam DefaultFontName Arial
 skinparam DefaultFontSize 16
 skinparam DefaultFontStyle bold
 
-A -> B : HELLO WORLD
-A <- B : Hi
-
+Enlarge -> Player
+Laser -> Player
 class "Player" as Player
 {
-    name : string
-    value : int
-    floating : float
+    paddleSize : float
+
+    private void Update();
+    private void Input();
+}
+
+Slow -> GameManager
+Disruption -> GameManager
+Break -> GameManager
+Health -> GameManager
+class "GameManager" as GameManager
+{
+    ballSpeed : float
+    balls : List<Balls>
+    ballDmg : float
+    gameHealth : int
+
+    public void MultiplyBalls(int ballMultiplier);
 }
 
 Powerups <|-- Enlarge
@@ -21,7 +35,7 @@ Powerups <|-- Disruption
 Powerups <|-- Laser
 Powerups <|-- Catch
 Powerups <|-- Break
-Powerups <|-- Player
+Powerups <|-- Health
 class "PowerUps" as Powerups
 {
     postition : Vector2
@@ -29,8 +43,9 @@ class "PowerUps" as Powerups
     stackable : bool
     
     protected virtual void Update();
-    public virtual void Activate();
+    protected virtual void Activate();
     protected virtual void Deactivate();
+    private void OnTriggerEnter2D(Collider2D col);
 }
 
 class "Enlarge" as Enlarge
@@ -64,7 +79,7 @@ class "Break" as Break
     damageMultiplier : int
 }
 
-class "Player" as Player
+class "Health" as Health
 {
     void IncreasePlayerHealth();
 }
