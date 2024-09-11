@@ -10,9 +10,12 @@ Laser -> Player
 class "Player" as Player
 {
     paddleSize : float
+    velocity : Vector2
+    position : Vector2
 
     private void Update();
     private void Input();
+    private void Move();
 }
 
 Slow -> GameManager
@@ -27,6 +30,8 @@ class "GameManager" as GameManager
     gameHealth : int
 
     public void MultiplyBalls(int ballMultiplier);
+    public delegate void OnStartGame(EventType eventType, object value)
+    private void StartGame();
 }
 
 Powerups <|-- Enlarge
@@ -115,10 +120,13 @@ class "Gold" as Gold
     private void DropBomb();
 }
 
+GameManager -> MultiplayerHandler : "event"
+Player <- MultiplayerHandler
 class MultiplayerHandler
 {
     players : Dictionary<Device, Player> 
     maxPlayerCount : int
+    canJoin : bool
 
     private void AddPlayer();
     private void RemovePlayer();
