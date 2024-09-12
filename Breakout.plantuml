@@ -121,7 +121,7 @@ class "Gold" as Gold
 }
 
 GameManager -> MultiplayerHandler : "event"
-Player <- MultiplayerHandler
+MultiplayerHandler *-- Player
 class MultiplayerHandler
 {
     players : Dictionary<Device, Player> 
