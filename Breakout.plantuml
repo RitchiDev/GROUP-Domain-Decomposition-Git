@@ -34,6 +34,16 @@ class "GameManager" as GameManager
     private void StartGame();
 }
 
+GameManager -> LevelBuilder : "event"
+LevelBuilder *-- Brick
+class "LevelBuilder" as LevelBuilder
+{
+    bricks : List<Brick>
+
+    private void LoadLevel();
+    private void CreateLevel();
+} 
+
 Powerups <|-- Enlarge
 Powerups <|-- Slow
 Powerups <|-- Disruption
@@ -133,4 +143,6 @@ class MultiplayerHandler
     public void OnNewDevice(Device someDevice);
     public void OnDeviceDisconnect(Device someDevice);
 }
+
+
 @enduml
