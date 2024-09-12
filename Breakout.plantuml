@@ -30,7 +30,7 @@ class "GameManager" as GameManager
     gameHealth : int
 
     public void MultiplyBalls(int ballMultiplier);
-    public delegate void OnStartGame(EventType eventType, object value)
+    public delegate void OnStartGame(EventType eventType, object value);
     private void StartGame();
 }
 
